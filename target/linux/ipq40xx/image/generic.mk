@@ -20,6 +20,24 @@ define Device/FitzImage
 	KERNEL = kernel-bin | fit none $$(DTS_DIR)/$$(DEVICE_DTS).dtb
 	KERNEL_NAME := zImage
 endef
+define Device/hiwifi_c526a
+	$(call Device/FitzImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := HiWiFi
+	DEVICE_MODEL := C526A
+	SOC := qcom-ipq4019
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := ipq-wifi-hiwifi_c526a kmod-mt7615e kmod-mt7615-firmware
+endef
+TARGET_DEVICES += hiwifi_c526a
+
+define Device/hiwifi_c526a-128m
+	$(call Device/hiwifi_c526a)
+	DEVICE_VARIANT := 128M
+endef
+TARGET_DEVICES += hiwifi_c526a-128m
+
 
 define Device/UbiFit
 	KERNEL_IN_UBI := 1
