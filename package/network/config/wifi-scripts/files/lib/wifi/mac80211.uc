@@ -85,7 +85,7 @@ set ${si}.network='lan'
 set ${si}.mode='ap'
 set ${si}.ssid='HiwifiX'
 set ${si}.encryption='psk2'
-set wireless.default_radio${devidx}.key='987654321'
+set ${si}.key='987654321'
 
 `);
 	commit = true;
