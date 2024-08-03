@@ -83,8 +83,9 @@ set ${si}=wifi-iface
 set ${si}.device='${name}'
 set ${si}.network='lan'
 set ${si}.mode='ap'
-set ${si}.ssid='ImmortalWrt'
-set ${si}.encryption='none'
+set ${si}.ssid='HiwifiX'
+set ${si}.encryption='psk2'
+set wireless.default_radio${devidx}.key='987654321'
 
 `);
 	commit = true;
